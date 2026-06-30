@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shreehan Santosh Kate — Robotics Engineer</title>
+<meta name="description" content="Shreehan Santosh Kate — Manipulator design, optimization & control. Incoming MS Robotics Engineering, WPI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-mark">SSK</a>
+    <div class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header id="home" class="hero">
+  <svg class="hero-grid" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      </pattern>
+    </defs>
+    <rect width="1200" height="800" fill="url(#grid)"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow">Robotics Engineer · Incoming MS, WPI</p>
+      <h1>Shreehan<br><span>Santosh Kate</span></h1>
+      <p class="hero-sub">Manipulator design, optimization &amp; control.</p>
+      <p class="hero-desc">I work on the kinematics, dynamics, and impedance control of robotic manipulators — from link-length optimization of redundant arms to compliant manipulation on the Franka Emika Panda. Graduating from NIT Tiruchirappalli, heading into an MS in Robotics Engineering at WPI, working toward a PhD in manipulation &amp; whole-body control.</p>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">7-DOF</span>
+          <span class="stat-label">manipulator thesis</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">3</span>
+          <span class="stat-label">IEEE publications</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">IK convergence rate</span>
+        </div>
+      </div>
+
+      <div class="hero-links">
+        <a href="https://www.linkedin.com/in/shreehansk/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="mailto:shreehan1912@gmail.com">Email ↗</a>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <div class="photo-frame">
+        <img src="assets/images/hero.jpg" alt="Shreehan Santosh Kate">
+      </div>
+      <svg class="response-curve" viewBox="0 0 300 140" aria-hidden="true">
+        <path d="M0,120 C40,120 50,5 90,20 C120,28 130,95 150,100 C165,103 175,88 190,90 C210,92 215,100 230,100 C260,100 270,100 300,100"
+              fill="none" stroke="currentColor" stroke-width="2"/>
+        <line x1="0" y1="100" x2="300" y2="100" stroke="currentColor" stroke-width="1" stroke-dasharray="2 4" opacity="0.4"/>
+      </svg>
+      <span class="curve-label">step response, ζ ≈ 0.6</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== EXPERIENCE ===================== -->
+<section id="experience" class="section">
+  <div class="section-inner">
+    <p class="eyebrow">Research &amp; Work</p>
+    <h2>Experience &amp; <em>Education</em></h2>
+
+    <div class="timeline">
+
+      <div class="t-row">
+        <div class="t-date">JAN 2026 — MAY 2026</div>
+        <div class="t-content">
+          <h3>Robotics Software Intern</h3>
+          <p class="t-org">xTerra Robotics · IIT Kanpur</p>
+          <ul>
+            <li>Architected a joint and Cartesian impedance control framework in C++ and ROS&nbsp;2 for compliant task-space manipulation on a 5-DOF manipulator.</li>
+            <li>Engineered a residual-based wrench estimator mapping manipulator-induced forces to a floating-base whole-body controller for quadruped stability during loco-manipulation.</li>
+            <li>Led kinematic modeling and link-length optimization for a 7-DOF redundant manipulator for space applications.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-date">JAN 2026 — MAY 2026</div>
+        <div class="t-content">
+          <h3>Design &amp; Development of a 7-DOF Redundant Manipulator</h3>
+          <p class="t-org">Bachelor's Thesis · NIT Trichy &amp; xTerra Robotics</p>
+          <ul>
+            <li>Solved a multi-objective link-length optimization via NSGA-II; selected Pareto knee-point design — 2.825 m reach, 0.147 conditioning number, 1.455 manipulability index.</li>
+            <li>Conducted singularity analysis via SVD, Cauchy–Binet sub-Jacobians, and screw dependency framework — 79.9% well-conditioned workspace.</li>
+            <li>Implemented a damped least-squares IK solver with adaptive Gaussian damping — 100% convergence.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-date">FEB 2024 — SEP 2025</div>
+        <div class="t-content">
+          <h3>Research Assistant</h3>
+          <p class="t-org">NIT Tiruchirappalli</p>
+          <ul>
+            <li>Developed a bio-inspired LQR tuning framework (GA &amp; PSO) — 10.4% faster settling time, 20% lower RMSE than analytical tuning.</li>
+            <li>Built an ANN-based autopilot architecture for nonlinear aircraft dynamics — 49.8% error reduction.</li>
+            <li>Identified a linear state-space model via N4SID and designed a PID controller for a mobile system.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-date">MAY 2024 — AUG 2024</div>
+        <div class="t-content">
+          <h3>Drone Research Intern</h3>
+          <p class="t-org">Indian Institute of Science, Bengaluru</p>
+          <ul>
+            <li>Designed and motion-studied a UAV docking mechanism in Fusion 360 for multi-drone payload operations.</li>
+            <li>Built an ArUco-marker detection pipeline in OpenCV for precision UAV landing on moving UGVs.</li>
+            <li>Estimated 6-DoF camera pose via the PnP algorithm from 3D–2D correspondences.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-date">NOV 2022 — MAY 2026</div>
+        <div class="t-content">
+          <h3>B.Tech, Instrumentation &amp; Control Engineering</h3>
+          <p class="t-org">National Institute of Technology, Tiruchirappalli · CGPA 7.86/10</p>
+          <ul>
+            <li>NITT Undergraduate STEM Research Fellowship Awardee — Top Merit Award, RECAL Alumni Association.</li>
+            <li>NPTEL certifications: Reinforcement Learning (IIT Madras), Drone Systems &amp; Control (IISc Bangalore).</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PUBLICATIONS ===================== -->
+<section id="publications" class="section alt">
+  <div class="section-inner">
+    <p class="eyebrow">Research Output</p>
+    <h2>Publications &amp; <em>Conferences</em></h2>
+
+    <div class="pub-list">
+      <div class="pub">
+        <span class="pub-tag">Accepted</span>
+        <h3>Adaptive PID Control for Quadrotor UAVs Using Feedback Linearization and Deep Reinforcement Learning</h3>
+        <p class="pub-authors">S. S. Kate, T. Shuprajhaa, K. Srinivasan</p>
+        <p class="pub-venue">2026 IEEE North-East India International Energy Conversion Conference and Exhibition</p>
+      </div>
+      <div class="pub">
+        <span class="pub-tag">Accepted</span>
+        <h3>Deep Reinforcement Learning Framework for Adaptive Control of Swing-up Inverted Pendulum</h3>
+        <p class="pub-authors">S. S. Kate, T. Shuprajhaa, K. Srinivasan</p>
+        <p class="pub-venue">5th International Conference on Emerging Electronics and Automation</p>
+      </div>
+      <div class="pub">
+        <span class="pub-tag">Published</span>
+        <h3>Bio-Inspired Optimization of LQR Controllers for Feedback-Linearized Cruise Missiles</h3>
+        <p class="pub-authors">C. Subbareddy, R. Ayyagari, S. S. Kate</p>
+        <p class="pub-venue">9th International Conference on Inventive Systems and Control</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJECTS ===================== -->
+<section id="projects" class="section">
+  <div class="section-inner">
+    <p class="eyebrow">Selected Work</p>
+    <h2>Projects</h2>
+
+    <div class="project-grid">
+      <div class="project-card">
+        <span class="project-tag">Active · Manipulation</span>
+        <h3>Perception &amp; Control Pipeline for Redundant Manipulators</h3>
+        <p>6-DOF Cartesian impedance controller — 3.8 mm peak / 0.14 mm steady-state tracking error. Two-camera 3D localization pipeline on the Franka Panda in MuJoCo — 1.4 mm position, 0.1° yaw error. Closed-loop pick-and-place across 50 randomized trials, 100% success.</p>
+        <span class="project-date">Jan 2026 — Present</span>
+      </div>
+      <div class="project-card">
+        <span class="project-tag">Reinforcement Learning</span>
+        <h3>Adaptive Control of Quadrotor UAVs</h3>
+        <p>TD3 &amp; DDPG actor-critic agents for dynamic controller-gain tuning, reward shaped on LQG cost. 60% lower cumulative tracking error (IAE, ISE) vs. fixed-gain PID, LQR, and LMPC, with demonstrated disturbance rejection.</p>
+        <span class="project-date">May 2025 — Aug 2025</span>
+      </div>
+      <div class="project-card">
+        <span class="project-tag">Nonlinear Control</span>
+        <h3>Fuzzy-Tuned LQR for Cruise Missile Autopilot</h3>
+        <p>Quasi-linearized 4th-order inner-loop model via feedback linearization. Mamdani Type-1 fuzzy inference system in MATLAB for online Q/R adaptation — 28.92% more robust than offline tuning.</p>
+        <span class="project-date">Mar 2024 — Jun 2024</span>
+      </div>
+      <div class="project-card">
+        <span class="project-tag">Dynamics</span>
+        <h3>7-DOF Redundant Manipulator for Space Applications</h3>
+        <p>Craig DH kinematic model, NSGA-II link-length optimization, Recursive Newton-Euler dynamics at 5 kg payload, and a damped least-squares IK solver with adaptive Gaussian damping.</p>
+        <span class="project-date">Jan 2026 — May 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SKILLS ===================== -->
+<section id="skills" class="section alt">
+  <div class="section-inner">
+    <p class="eyebrow">Toolset</p>
+    <h2>Skills</h2>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Robotics</h4>
+        <div class="tags">
+          <span>Manipulator Kinematics</span><span>Dynamics</span><span>Impedance Control</span>
+          <span>Trajectory Planning</span><span>Singularity Analysis</span><span>Whole-Body Control</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Coding</h4>
+        <div class="tags">
+          <span>MATLAB</span><span>Python</span><span>C++</span><span>ROS&nbsp;2</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Frameworks</h4>
+        <div class="tags">
+          <span>PyTorch</span><span>OpenCV</span><span>NumPy</span><span>MuJoCo</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Engineering Software</h4>
+        <div class="tags">
+          <span>Simulink</span><span>Fusion&nbsp;360</span><span>AutoCAD</span><span>Gazebo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" class="section contact-section">
+  <div class="section-inner">
+    <p class="eyebrow">Get in Touch</p>
+    <h2>Let's <em>Connect</em></h2>
+    <p class="contact-desc">Reaching out about manipulation research, control systems, or WPI — happy to talk. Best by email or LinkedIn.</p>
+    <div class="contact-links">
+      <a href="mailto:shreehan1912@gmail.com" class="contact-btn">shreehan1912@gmail.com</a>
+      <a href="https://www.linkedin.com/in/shreehansk/" target="_blank" rel="noopener" class="contact-btn outline">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="section-inner footer-inner">
+    <span>© 2026 Shreehan Santosh Kate</span>
+    <span class="footer-curve">⌁ settling, not by accident</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
