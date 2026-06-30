@@ -273,7 +273,8 @@ h2 em, h1 span{ font-style: normal; color: var(--accent); }
   letter-spacing: 0.03em; padding-top: 2px;
 }
 .t-content h3{ font-size: 1.2rem; margin-bottom: 4px; }
-.t-org{ font-family: var(--mono); font-size: 0.84rem; color: var(--ink-soft); margin-bottom: 12px; }
+.t-org{ font-family: var(--mono); font-size: 0.84rem; color: var(--ink-soft); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.t-org-logo{ width: 18px; height: 18px; object-fit: contain; border-radius: 3px; }
 .t-content ul{ padding-left: 1.1rem; display: flex; flex-direction: column; gap: 7px; }
 .t-content li{ font-size: 0.94rem; color: var(--ink-soft); }
 .t-content li::marker{ color: var(--accent); }
