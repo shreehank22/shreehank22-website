@@ -28,20 +28,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Mobile hamburger menu
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
   // Trajectory rail: position waypoint dots, fill the path with scroll progress,
-  // and highlight whichever section is currently in view.
+  // and highlight whichever section is currently in view. Drives both the
+  // desktop vertical rail and the mobile horizontal progress bar.
   const rail = document.querySelector('.traj-rail');
-  if (rail) {
+  const fillMobile = document.getElementById('traj-fill-h');
+  if (rail || fillMobile) {
     const fill = document.getElementById('traj-fill');
     const dotsWrap = document.getElementById('traj-dots');
-    const dots = Array.from(dotsWrap.querySelectorAll('.traj-dot'));
-    const sections = dots
-      .map(dot => document.getElementById(dot.dataset.target))
-      .filter(Boolean);
+    const dots = dotsWrap ? Array.from(dotsWrap.querySelectorAll('.traj-dot')) : [];
+    const sections = dots.length
+      ? dots.map(dot => document.getElementById(dot.dataset.target)).filter(Boolean)
+      : Array.from(document.querySelectorAll('.section, .hero')).filter(el => el.id);
 
     function layoutDots() {
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (docHeight <= 0) return;
+      if (!dots.length) return;
       sections.forEach((section, i) => {
         const pct = (section.offsetTop / document.documentElement.scrollHeight) * 100;
         dots[i].style.top = pct + '%';
@@ -52,14 +69,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
-      fill.style.height = (progress * (rail.clientHeight - 96)) + 'px';
 
-      let activeIndex = 0;
-      const probe = scrollTop + window.innerHeight * 0.35;
-      sections.forEach((section, i) => {
-        if (probe >= section.offsetTop) activeIndex = i;
-      });
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === activeIndex));
+      if (fill && rail) fill.style.height = (progress * (rail.clientHeight - 96)) + 'px';
+      if (fillMobile) fillMobile.style.width = (progress * 100) + '%';
+
+      if (dots.length) {
+        let activeIndex = 0;
+        const probe = scrollTop + window.innerHeight * 0.35;
+        sections.forEach((section, i) => {
+          if (probe >= section.offsetTop) activeIndex = i;
+        });
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === activeIndex));
+      }
     }
 
     layoutDots();

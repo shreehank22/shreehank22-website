@@ -164,6 +164,46 @@ h2 em, h1 span{ font-style: normal; color: var(--accent); }
   .nav-links{ display: none; }
 }
 
+.menu-toggle{
+  display: none; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 100px;
+  border: 1px solid var(--line); background: transparent; color: var(--ink);
+  cursor: pointer;
+}
+.menu-toggle svg{ width: 18px; height: 18px; }
+
+.mobile-menu{
+  display: none; flex-direction: column;
+  max-height: 0; overflow: hidden;
+  background: var(--card); border-bottom: 1px solid var(--line);
+  transition: max-height .25s ease;
+}
+.mobile-menu a{
+  padding: 14px 28px; font-size: 0.95rem; color: var(--ink-soft);
+  border-top: 1px solid var(--line);
+}
+.mobile-menu a:first-child{ border-top: none; }
+.mobile-menu.open{ max-height: 420px; }
+
+@media (max-width: 760px){
+  .menu-toggle{ display: flex; }
+  .mobile-menu{ display: flex; }
+}
+
+/* Mobile trajectory bar: a thin horizontal progress line under the nav,
+   standing in for the vertical rail on narrow screens. */
+.traj-rail-mobile{ display: none; position: relative; height: 3px; background: var(--line); overflow: hidden; }
+.traj-track-h{ position: absolute; inset: 0; }
+.traj-fill-h{ position: absolute; left: 0; top: 0; bottom: 0; width: 0%; background: var(--accent); transition: width .08s linear; }
+
+@media (max-width: 900px){
+  .traj-rail-mobile{ display: block; }
+}
+
+@media (max-width: 560px){
+  .nav-cta{ display: none; }
+}
+
 /* ============== HERO ============== */
 .hero{ position: relative; overflow: hidden; padding-top: 40px; }
 .hero-grid{
