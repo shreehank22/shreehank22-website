@@ -197,7 +197,7 @@ h2 em, h1 span{ font-style: normal; color: var(--accent); }
 }
 .hero-links a:hover{ background: var(--ink); color: var(--paper); }
 
-.hero-affiliations{ margin-bottom: 2rem; }
+.hero-affiliations{ margin-top: 2.6rem; }
 .aff-label{
   display: block; font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase;
   letter-spacing: 0.1em; color: var(--ink-soft); margin-bottom: 14px;
