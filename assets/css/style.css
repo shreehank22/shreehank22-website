@@ -14,6 +14,7 @@
   --accent-soft: #E8EDFC;
   --navy:     #0E1830;
   --navy-soft:#1B274A;
+  --nav-bg: rgba(250,250,249,0.86);
 
   --display: 'Space Grotesk', sans-serif;
   --body:    'Inter', sans-serif;
@@ -32,6 +33,7 @@
   --accent-soft: #19213B;
   --navy:     #060810;
   --navy-soft:#0F1730;
+  --nav-bg: rgba(11,13,18,0.82);
 }
 
 body, .photo-frame, .pub, .project-card, .tags span, .contact-btn, #nav{
@@ -74,7 +76,7 @@ h2 em, h1 span{ font-style: normal; color: var(--accent); }
 /* ============== NAV ============== */
 #nav{
   position: sticky; top: 0; z-index: 100;
-  background: rgba(250,250,249,0.86);
+  background: var(--nav-bg);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
