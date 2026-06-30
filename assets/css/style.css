@@ -116,7 +116,12 @@ h2 em, h1 span{ font-style: normal; color: var(--accent); }
 .traj-dot:hover .traj-tip{ opacity: 1; transform: translateY(-50%) translateX(2px); }
 
 @media (max-width: 900px){
-  .traj-rail{ display: none; }
+  :root{ --rail-w: 34px; }
+  .traj-track{ top: 36px; bottom: 36px; }
+  .traj-fill{ top: 36px; }
+  .traj-dots{ top: 36px; bottom: 36px; }
+  .traj-dot{ width: 9px; height: 9px; }
+  .traj-tip{ display: none; }
 }
 
 /* ============== NAV ============== */
@@ -172,33 +177,54 @@ h2 em, h1 span{ font-style: normal; color: var(--accent); }
 }
 .menu-toggle svg{ width: 18px; height: 18px; }
 
-.mobile-menu{
-  display: none; flex-direction: column;
-  max-height: 0; overflow: hidden;
-  background: var(--card); border-bottom: 1px solid var(--line);
-  transition: max-height .25s ease;
+.mobile-menu-backdrop{
+  position: fixed; inset: 0; z-index: 150;
+  background: rgba(6, 8, 10, 0.55); backdrop-filter: blur(3px);
+  opacity: 0; pointer-events: none; transition: opacity .3s ease;
 }
+.mobile-menu-backdrop.open{ opacity: 1; pointer-events: auto; }
+
+.mobile-menu{
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 160;
+  width: min(76vw, 320px);
+  display: flex; flex-direction: column;
+  padding-top: 88px;
+  background: var(--nav-bg); backdrop-filter: blur(18px);
+  border-left: 1px solid var(--line);
+  box-shadow: -24px 0 60px -20px rgba(0,0,0,0.45);
+  transform: translateX(100%);
+  transition: transform .32s cubic-bezier(.2,.8,.2,1);
+}
+.mobile-menu.open{ transform: translateX(0); }
 .mobile-menu a{
-  padding: 14px 28px; font-size: 0.95rem; color: var(--ink-soft);
-  border-top: 1px solid var(--line);
+  padding: 17px 28px; font-size: 1.02rem; color: var(--ink-soft);
+  border-top: 1px solid var(--line); transition: color .2s, background .2s;
 }
 .mobile-menu a:first-child{ border-top: none; }
-.mobile-menu.open{ max-height: 420px; }
+.mobile-menu a:hover{ color: var(--ink); background: var(--accent-soft); }
+.mobile-menu-close{
+  position: absolute; top: 18px; right: 18px;
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 100px;
+  border: 1px solid var(--line); background: transparent; color: var(--ink);
+  cursor: pointer;
+}
+.mobile-menu-close svg{ width: 16px; height: 16px; }
 
 @media (max-width: 760px){
   .menu-toggle{ display: flex; }
-  .mobile-menu{ display: flex; }
 }
 
-/* Mobile trajectory bar: a thin horizontal progress line under the nav,
-   standing in for the vertical rail on narrow screens. */
+@media (prefers-reduced-motion: reduce){
+  .mobile-menu{ transition: none; }
+  .mobile-menu-backdrop{ transition: none; }
+}
+
+/* Horizontal mobile bar retired in favor of the vertical rail at all sizes;
+   markup stays in HTML but is kept hidden. */
 .traj-rail-mobile{ display: none; position: relative; height: 3px; background: var(--line); overflow: hidden; }
 .traj-track-h{ position: absolute; inset: 0; }
 .traj-fill-h{ position: absolute; left: 0; top: 0; bottom: 0; width: 0%; background: var(--accent); transition: width .08s linear; }
-
-@media (max-width: 900px){
-  .traj-rail-mobile{ display: block; }
-}
 
 @media (max-width: 560px){
   .nav-cta{ display: none; }
@@ -275,7 +301,7 @@ h2 em, h1 span{ font-style: normal; color: var(--accent); }
 }
 
 @media (max-width: 860px){
-  .hero-inner{ grid-template-columns: 1fr; padding-top: 40px; padding-left: 28px; }
+  .hero-inner{ grid-template-columns: 1fr; padding-top: 40px; padding-left: max(28px, calc(var(--rail-w) + 28px)); }
   .hero-photo{ order: -1; max-width: 260px; margin: 0 auto; }
 }
 
@@ -289,7 +315,7 @@ h2 em, h1 span{ font-style: normal; color: var(--accent); }
 .section h2{ font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 3rem; }
 
 @media (max-width: 900px){
-  .section-inner{ padding: 0 28px; }
+  .section-inner{ padding: 0 28px 0 max(28px, calc(var(--rail-w) + 28px)); }
 }
 
 /* Shared elevated-card look, replacing the old hairline-grid pattern */
@@ -457,7 +483,7 @@ footer{ border-top: 1px solid var(--line); padding: 28px 0; }
   padding: 0 28px 0 max(28px, calc(var(--rail-w) + 28px));
   display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--ink-soft); font-family: var(--mono);
 }
-@media (max-width: 900px){ .footer-inner{ padding: 0 28px; } }
+@media (max-width: 900px){ .footer-inner{ padding: 0 28px 0 max(28px, calc(var(--rail-w) + 28px)); } }
 
 @media (max-width: 500px){
   .footer-inner{ flex-direction: column; gap: 6px; text-align: center; }

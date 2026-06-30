@@ -28,19 +28,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mobile hamburger menu
+  // Mobile slide-in menu
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
-  if (menuToggle && mobileMenu) {
+  const menuBackdrop = document.getElementById('mobile-menu-backdrop');
+  const menuClose = document.getElementById('mobile-menu-close');
+
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    menuBackdrop.classList.add('open');
+    menuToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    menuBackdrop.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  if (menuToggle && mobileMenu && menuBackdrop) {
     menuToggle.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
     });
+    if (menuClose) menuClose.addEventListener('click', closeMenu);
+    menuBackdrop.addEventListener('click', closeMenu);
     mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', closeMenu);
+    });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
     });
   }
 
@@ -70,7 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
 
-      if (fill && rail) fill.style.height = (progress * (rail.clientHeight - 96)) + 'px';
+      if (fill && rail) {
+        const track = rail.querySelector('.traj-track');
+        const usableHeight = track ? track.getBoundingClientRect().height : rail.clientHeight - 96;
+        fill.style.height = (progress * usableHeight) + 'px';
+      }
       if (fillMobile) fillMobile.style.width = (progress * 100) + '%';
 
       if (dots.length) {
