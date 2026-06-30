@@ -197,16 +197,16 @@ h2 em, h1 span{ font-style: normal; color: var(--accent); }
 }
 .hero-links a:hover{ background: var(--ink); color: var(--paper); }
 
-.hero-affiliations{ margin-top: 2.6rem; }
+.hero-affiliations{ margin-bottom: 2rem; }
 .aff-label{
-  display: block; font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase;
-  letter-spacing: 0.1em; color: var(--ink-soft); margin-bottom: 12px;
+  display: block; font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--ink-soft); margin-bottom: 14px;
 }
-.aff-logos{ display: flex; flex-wrap: wrap; gap: 10px; }
+.aff-logos{ display: flex; flex-wrap: wrap; gap: 12px; }
 .aff-badge{
   display: inline-flex; align-items: center; justify-content: center;
-  width: 46px; height: 46px; padding: 7px; background: #fff;
-  border: 1px solid var(--line); border-radius: 9px;
+  width: 64px; height: 64px; padding: 9px; background: #fff;
+  border: 1px solid var(--line); border-radius: 12px;
   transition: transform .2s ease, border-color .2s ease;
 }
 .aff-badge:hover{ transform: translateY(-2px); border-color: var(--accent); }
