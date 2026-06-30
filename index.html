@@ -55,7 +55,6 @@
 
   <div class="hero-inner">
     <div class="hero-text">
-      <p class="eyebrow">Robotics Engineer · Incoming MS, WPI</p>
       <h1>Shreehan<br><span>Santosh Kate</span></h1>
       <p class="hero-sub">Control Theory, Optimization, Learning.</p>
       <p class="hero-desc">I work on the <strong>kinematics, dynamics, and control of robotic manipulators and aerial systems</strong>, from link length optimization of redundant arms to compliant manipulation on the Franka Emika Panda. I'm graduating from NIT Tiruchirappalli and heading into a Master's in Robotics Engineering at WPI, working toward a PhD in manipulation and whole body control.</p>
@@ -242,6 +241,9 @@
 
     <div class="project-grid">
       <div class="project-card">
+        <div class="project-media">
+          <img src="assets/images/projects/perception-pipeline.jpg" alt="MuJoCo simulation of the Franka Emika Panda arm performing perception-guided pick and place">
+        </div>
         <span class="project-tag">Active · Manipulation</span>
         <h3>Perception &amp; Control Pipeline for Redundant Manipulators</h3>
         <p>Implemented a 6-DOF Cartesian impedance controller for compliant manipulation, reaching 3.8 mm peak and 0.14 mm steady state tracking error. Built a two-camera 3D localization pipeline for the Franka Emika Panda in MuJoCo, achieving 1.4 mm position and 0.1 degree yaw accuracy without learned models. Closed the loop with a pick and place system combining wrist camera pose refinement, damped least squares IK, and contact triggered grasping, validated across 50 randomized trials with a 100% success rate.</p>
@@ -262,6 +264,9 @@
       </div>
 
       <div class="project-card">
+        <div class="project-media">
+          <img src="assets/images/projects/missile-response.jpg" alt="System response plots for pitch rate, angle of attack, and tail deflection of the missile autopilot">
+        </div>
         <span class="project-tag">Nonlinear Control</span>
         <h3>Fuzzy-Tuned LQR for Cruise Missile Autopilot</h3>
         <p>Derived a quasi linearized fourth order inner loop model from a nonlinear longitudinal missile autopilot using feedback linearization. Designed a Mamdani Type 1 fuzzy inference system in MATLAB for online adaptation of LQR weights, improving autopilot robustness by 28.92% over offline tuning.</p>
@@ -272,6 +277,9 @@
       </div>
 
       <div class="project-card">
+        <div class="project-media">
+          <img src="assets/images/projects/thesis-ik.jpg" alt="IK trajectory verification plots showing designed versus IK to FK tracking in X, Y, Z and position and rotation error">
+        </div>
         <span class="project-tag">Dynamics</span>
         <h3>7-DOF Redundant Manipulator for Space Applications</h3>
         <p>Built the kinematic model with the Craig DH convention and optimized link lengths with NSGA-II. Computed actuator torques with the Recursive Newton-Euler Algorithm at a 5 kg payload. Solved inverse kinematics with a damped least squares solver using adaptive Gaussian damping, reaching 100% convergence.</p>

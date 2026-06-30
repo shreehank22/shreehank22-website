@@ -240,6 +240,14 @@ h2 em, h1 span{ font-style: normal; color: var(--accent); }
 /* ============== PROJECTS ============== */
 .project-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
 .project-card{ background: var(--paper); padding: 30px 28px; display: flex; flex-direction: column; gap: 10px; }
+.project-media{
+  width: calc(100% + 56px); margin: -30px -28px 4px;
+  aspect-ratio: 16/9; overflow: hidden; background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+.project-media img{
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
 .project-tag{ font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); }
 .project-card h3{ font-size: 1.12rem; line-height: 1.35; }
 .project-card p{ font-size: 0.92rem; color: var(--ink-soft); flex-grow: 1; }
