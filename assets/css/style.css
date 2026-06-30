@@ -215,6 +215,11 @@ h2 em, h1 span{ font-style: normal; color: var(--accent); }
 .t-content ul{ padding-left: 1.1rem; display: flex; flex-direction: column; gap: 7px; }
 .t-content li{ font-size: 0.94rem; color: var(--ink-soft); }
 .t-content li::marker{ color: var(--accent); }
+.t-link{
+  display: inline-block; margin-top: 12px; font-family: var(--mono); font-size: 0.78rem;
+  color: var(--accent); border-bottom: 1px solid transparent; transition: border-color .2s;
+}
+.t-link:hover{ border-color: var(--accent); }
 
 @media (max-width: 700px){
   .t-row{ grid-template-columns: 1fr; gap: 8px; }
